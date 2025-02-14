@@ -45,6 +45,6 @@ class Program
             person.GetInfo();
         }
 
-        Console.WriteLine($"Состояние сотрудника: {people[0].Role}");
+        Console.WriteLine($"Employee status: {people[0].Role}");
     }
 }
