@@ -1,0 +1,50 @@
+using System;
+using System.Text;
+
+abstract class Person
+{
+    public abstract string Role { get; }
+
+    public virtual void GetInfo()
+    {
+        Console.WriteLine($"Это {Role}");
+    }
+}
+
+class Employee : Person
+{
+    public override string Role => "Person 1";
+
+    public override void GetInfo()
+    {
+        Console.WriteLine($"Its {Role}, He's a waiter");
+    }
+}
+
+class Manager : Person
+{
+    public override string Role => "Person 2";
+
+    public override void GetInfo()
+
+    {
+        Console.WriteLine($"Its {Role}, He's a manager");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8;
+
+        Person[] people = { new Employee(), new Manager() };
+
+        foreach (var person in people)
+        {
+            person.GetInfo();
+        }
+
+        Console.WriteLine($"Состояние сотрудника: {people[0].Role}");
+    }
+}
